@@ -16,3 +16,6 @@ packege:
 
 deploy:
 	sam deploy --template-file sam-app/output-template.yaml --stack-name go-lambda --capabilities CAPABILITY_IAM --profile toriumin
+
+dynamodb:
+	aws dynamodb create-table --table-name Score --attribute-definitions AttributeName=PersonID,AttributeType=S AttributeName=TestID,AttributeType=S --key-schema AttributeName=PersonID,KeyType=HASH AttributeName=TestID,KeyType=RANGE --provisioned-throughput ReadCapacityUnits=1,WriteCapacityUnits=1 --profile toriumin
