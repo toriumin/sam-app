@@ -13,15 +13,15 @@ func handler(request events.APIGatewayProxyRequest) (events.APIGatewayProxyRespo
 	old := 23
 
 	person := PersonResponse{
-		PersonID:   personID,
-		PersonName: personName,
-		Old:        old,
+		PersonID:	personID,
+		PersonName:	personName,
+		Old:		old,
 	}
-	jsonBytes, _ := json.Marshal(person)
+	jsonBytes, _ :=	json.Marshal(person)
 
 	return events.APIGatewayProxyResponse{
-		Body:       string(jsonBytes),
-		StatusCode: 200,
+		Body:		string(jsonBytes),
+		StatusCode:	200,
 	}, nil
 }
 
@@ -30,7 +30,7 @@ func main() {
 }
 
 type PersonResponse struct {
-	PersonID   string `json:"personID"`
-	PersonName string `json:"personName"`
-	Old        int    `json:"old"`
+	PersonID	string	`json:"personID"`
+	PersonName	string	`json:"personName"`
+	Old			int		`json:"old"`
 }
